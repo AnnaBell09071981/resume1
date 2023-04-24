@@ -19,6 +19,7 @@
             {{/with}}
         </div>
         <br>
+        <hr>
         <div>
             {{#with person.address}}
             {{> title big=false data='Address'}}
@@ -31,6 +32,8 @@
             </ul>
             {{/with}}
         </div>
+        <br>
+        <hr>
         <div>
             {{> title big=false data='Education'}}
 
@@ -42,6 +45,8 @@
                 <li>{{graduationYear}}</li>
             </ul>
             {{/each}}
+            <br>
+            <hr>
 
             <div>
                 {{> title big=false data='Work experience'}}
@@ -53,6 +58,9 @@
                     <li>{{startDate}}</li>
                     <li>{{endDate}}</li>
                 </ul>
+                <br>
+                <hr>
+
                 {{> title big=false data='Responsibilities'}}
                 {{#each responsibilities}}
                 <ul>
@@ -62,13 +70,16 @@
                 <ul>
                     <li>{{year_founded}}</li>
                     <li>{{industry}}</li>
-
+                    <br>
+                    <hr>
                     {{#each employees}}
                     {{> title data='Employees'}}
 
                     <li>{{name}}</li>
                     <li>{{position}}</li>
                     <li>{{department}}</li>
+                    <br>
+                    <hr>
 
                     {{#each projects}}
                     {{> title data='Projects'}}
@@ -76,6 +87,8 @@
                     <li>{{name}}</li>
                     <li>{{description}}</li>
                     <li>{{status}}</li>
+                    <br>
+                    <hr>
 
                     {{#each teams}}
                     <h3>{{team_name}}</h3>
@@ -86,6 +99,7 @@
                     <li><a href="john.smith@example.com">{{email}}</a></li>
                     {{/with}}
                     <br>
+                    <hr>
 
                     {{#each team_members}}
                     <li>{{name}}</li>
@@ -93,23 +107,28 @@
                     <li><a href="alice.johnson@example.com">{{email}}</a></li>
 
                     <br>
+                    <hr>
+
                     {{> title data='Skills'}}
                     {{#each skills}}
                     <li>{{this}}</li>
                     {{/each}}
                     <br>
+                    <hr>
 
                     {{> title data='Projects'}}
                     {{#each projects}}
                     <li>{{name}}</li>
                     <li>{{description}}</li>
                     <br>
+                    <hr>
 
                     {{> title data='Technologies'}}
                     {{#each technologies}}
                     <li>{{this}}</li>
                     {{/each}}
                     <br>
+                    <hr>
 
                     {{> title data='Team members'}}
                     {{#each team_members}}
