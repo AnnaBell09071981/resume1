@@ -1,0 +1,135 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section>
+        {{> title big=true data="My person"}}
+
+
+        <div>
+            {{#with person}}
+            {{> title big=false data='Person'}}
+            <lu>
+                <li>Name: {{name}}</li>
+                <li>Age: {{age}}</li>
+                <li>Gender: {{gender}}</li>
+            </lu>
+            {{/with}}
+        </div>
+        <br>
+        <div>
+            {{#with person.address}}
+            {{> title big=false data='Address'}}
+            <ul>
+                <li>Street: {{street}}</li>
+                <li>City: {{city}}</li>
+                <li>State: {{state}}</li>
+                <li>Zip: {{zip}}</li>
+                <li>Country: {{country}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            {{> title big=false data='Education'}}
+
+            {{#each person.education}}
+            <ul>
+                <li>{{degree}}</li>
+                <li>{{major}}</li>
+                <li>{{university}}</li>
+                <li>{{graduationYear}}</li>
+            </ul>
+            {{/each}}
+
+            <div>
+                {{> title big=false data='Work experience'}}
+
+                {{#each person.workExperience}}
+                <ul>
+                    <li>{{company}}</li>
+                    <li>{{title}}</li>
+                    <li>{{startDate}}</li>
+                    <li>{{endDate}}</li>
+                </ul>
+                {{> title big=false data='Responsibilities'}}
+                {{#each responsibilities}}
+                <ul>
+                    <li>{{this}}</li>
+                </ul>
+                {{/each}}
+                <ul>
+                    <li>{{year_founded}}</li>
+                    <li>{{industry}}</li>
+
+                    {{#each employees}}
+                    {{> title data='Employees'}}
+
+                    <li>{{name}}</li>
+                    <li>{{position}}</li>
+                    <li>{{department}}</li>
+
+                    {{#each projects}}
+                    {{> title data='Projects'}}
+
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                    <li>{{status}}</li>
+
+                    {{#each teams}}
+                    <h3>{{team_name}}</h3>
+
+                    {{#with team_leader}}
+                    <li>{{name}}</li>
+                    <li>{{title}}</li>
+                    <li><a href="john.smith@example.com">{{email}}</a></li>
+                    {{/with}}
+                    <br>
+
+                    {{#each team_members}}
+                    <li>{{name}}</li>
+                    <li>{{title}}</li>
+                    <li><a href="alice.johnson@example.com">{{email}}</a></li>
+
+                    <br>
+                    {{> title data='Skills'}}
+                    {{#each skills}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                    <br>
+
+                    {{> title data='Projects'}}
+                    {{#each projects}}
+                    <li>{{name}}</li>
+                    <li>{{description}}</li>
+                    <br>
+
+                    {{> title data='Technologies'}}
+                    {{#each technologies}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                    <br>
+
+                    {{> title data='Team members'}}
+                    {{#each team_members}}
+                    <li>{{name}}</li>
+                    <li>{{title}}</li>
+                    {{/each}}
+                    {{/each}}
+                    {{/each}}
+
+                    {{/each}}
+                    {{/each}}
+                    {{/each}}
+                </ul>
+                {{/each}}
+
+            </div>
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
