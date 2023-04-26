@@ -1,0 +1,119 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <section>
+        {{> title big=true data="Web"}}
+
+
+        <div>
+
+            {{> title big=false data="Languages"}}
+
+            {{#with web}}
+
+            {{#each languages}}
+            <div>
+                <br>
+                <hr>
+                {{#with nameHTML}}
+                <main>
+                    <section>
+                        <p>{{name}}</p>
+                        <p>{{version}}</p>
+                        <p>{{description}}</p>
+                    </section>
+                </main>
+                {{/with}}
+
+                {{#each elements}}
+                <main>
+                    <section>
+                        <p>Name: {{name}}</p>
+                        <p>Description: {{description}}</p>
+                        {{#each attributes}}
+                        <div>
+                            <ul>
+                                <li>{{name}}</li>
+                                <li>{{description}}</li>
+                            </ul>
+                        </div>
+                        {{/each}}
+                    </section>
+                </main>
+                {{/each}}
+
+
+                {{#with nameCSS}}
+                <main>
+                    <section>
+                        <p>{{name}}</p>
+                        <p>{{version}}</p>
+                        <p>{{description}}</p>
+                    </section>
+                </main>
+                {{/with}}
+
+                {{#each properties}}
+                <main>
+                    <section>
+                        <p>Name: {{name}}</p>
+                        <p>Description: {{description}}</p>
+                        {{#each values}}
+                        <div>
+                            <ul>
+                                <li>{{value}}</li>
+                                <li>{{description}}</li>
+                            </ul>
+                        </div>
+                        {{/each}}
+                    </section>
+                </main>
+                {{/each}}
+
+
+                {{#with nameJS}}
+                <main>
+                    <section>
+                        <p>{{name}}</p>
+                        <p>{{version}}</p>
+                        <p>{{description}}</p>
+                    </section>
+                </main>
+                {{/with}}
+
+                {{#each functions}}
+                <main>
+                    <section>
+                        <p>Name: {{name}}</p>
+                        <p>Description: {{description}}</p>
+                        {{#each parameters}}
+                        <div>
+                            <ul>
+                                <li>{{name}}</li>
+                                <li>{{type}}</li>
+                                <li>{{description}}</li>
+                            </ul>
+                        </div>
+                        {{/each}}
+                    </section>
+                </main>
+                {{/each}}
+
+
+
+            </div>
+
+            {{/each}}
+            {{/with}}
+
+        </div>
+    </section>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
