@@ -34,7 +34,44 @@
             <h3>Syntax: </h3>
             {{#with syntax}}
             <main>
+                <h4><em>Variables:</em></h4>
                 {{#each variables}}
+                <div>
+                    <ul>
+                        <li>{{this}}</li>
+                    </ul>
+                </div>
+                {{/each}}
+                <hr>
+                <h4><em>Functions:</em></h4>
+                {{#each functions}}
+                <div>
+                    <ul>
+                        <li>{{this}}</li>
+                    </ul>
+                </div>
+                {{/each}}
+                <hr>
+                <h4><em>Conditionals:</em></h4>
+                {{#each conditionals}}
+                <div>
+                    <ul>
+                        <li>{{this}}</li>
+                    </ul>
+                </div>
+                {{/each}}
+                <hr>
+                <h4><em>Loops:</em></h4>
+                {{#each loops}}
+                <div>
+                    <ul>
+                        <li>{{this}}</li>
+                    </ul>
+                </div>
+                {{/each}}
+                <hr>
+                <h4><em>Classes:</em></h4>
+                {{#each classes}}
                 <div>
                     <ul>
                         <li>{{this}}</li>
