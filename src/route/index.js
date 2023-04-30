@@ -934,7 +934,8 @@ router.get('/bootstrap', function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
-//           ↙ тут вводимо шлях (PATH) до сторінкиrouter.get('/task21', function (req, res) {
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/task21', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
@@ -998,6 +999,9 @@ router.get('/bootstrap', function (req, res) {
           url: 'https://getbootstrap.com/',
         },
       ],
+    },
+  })
+})
 router.get('/task22', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1051,7 +1055,6 @@ router.get('/task22', function (req, res) {
           },
         },
       },
- master
     },
   })
   //                  ↑↑ сюди вводимо JSON дані
