@@ -831,6 +831,9 @@ router.get('/car', function (req, res) {
       total: 28990,
     },
   })
+ task22
+  //                  ↑↑ сюди вводимо JSON дані
+ master
 })
 
 // ================================================================
@@ -911,6 +914,10 @@ router.get('/js', function (req, res) {
       },
     ],
   })
+ task22
+
+  //                  ↑↑ сюди вводимо JSON дані
+ master
 })
 // router.get Створює нам один ентпоїнт
 
