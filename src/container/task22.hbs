@@ -1,0 +1,83 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<header>
+    <main>
+        {{#with page_header}}
+        <h1 class="text-center">{{title}}</h1>
+        <p class="text-center text-uppercase">{{description}}</p>
+        {{/with}}
+        <br>
+        <hr>
+        {{#with section}}
+        <p class="display-6 text-end">{{about_us.title_list.main}}</p>
+        <br>
+        <h2 class="text-end">{{about_us.title_list.sub}}</h2>
+        <br>
+        <button class="btn btn-outline-info">{{about_us.button.text}}</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class="display-5">{{advantage.title}}</p>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <p class="display-4">{{advantage.efficiency.title}}</p>
+                <br>
+                <h6>{{advantage.efficiency.sub_title}}</h6>
+                <br>
+                <p>{{advantage.efficiency.description}}</p>
+                <br>
+                <button class="btn btn-outline-warning">{{advantage.efficiency.button}}</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-center display-4">{{advantage.innovation.title}}</p>
+                <br>
+                <h6 class="text-center">{{advantage.innovation.sub_title}}</h6>
+                <br>
+                <p class="text-center">{{advantage.innovation.description}}</p>
+                <br>
+                <button class="btn btn-outline-warning">{{advantage.innovation.button}}</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-end display-4">{{advantage.collaboration.title}}</p>
+                <br>
+                <h6 class="text-end">{{advantage.collaboration.sub_title}}</h6>
+                <br>
+                <p class="text-end">{{advantage.collaboration.description}}</p>
+                <br>
+                <button class="btn btn-outline-warning">{{advantage.collaboration.button}}</button>
+            </div>
+        </div>
+        <br>
+        <br>
+        <p class="display-5">{{agreement.title}}</p>
+        <br>
+        <h5>{{agreement.info.sub_title}}</h5>
+        <br>
+        <br>
+        <div class="card">
+            <div class="card-body">
+                <p>{{agreement.info.detail.text}}</p>
+                <br>
+                <button class="btn btn-success">{{agreement.info.detail.button}}</button>
+            </div>
+        </div>
+        {{/with}}
+    </main>
+</header>
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
