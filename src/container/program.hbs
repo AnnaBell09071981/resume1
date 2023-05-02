@@ -3,7 +3,7 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<main>
     <section>
         {{> title big=true data="Program"}}
 
@@ -13,105 +13,90 @@
             {{> title big=false data="Excursion"}}
             <hr>
             {{#with excursion}}
-            <main>
-                <section>
-                    <p>{{name}}</p>
-                    {{#with location}}
-                    <p>Location: {{location}}</p>
-                    <ul>
-                        <li>City: {{city}}</li>
-                        <li>Country: {{country}}</li>
-                    </ul>
-                    {{/with}}
-                    <p>Date: {{date}}</p>
-                </section>
-            </main>
-        </div>
-        <hr>
-        {{#each program}}
-        <main>
+            <h4>{{name}}</h4>
+            <div>
+                <p>{{location.city}}</p>
+                <p>{{location.country}}</p>
+                <p>{{date}}</p>
+            </div>
+            {{!-- {{#each program}} --}}
             <section>
-                <p>{{name}}</p>
-                <p>{{type}}</p>
-                <p>{{duration}}</p>
+                <h4>{{program.[0].name}}</h4>
+                <p>{{program.[0].type}}</p>
+                <p>{{program.[0].duration}}</p>
+
+                {{#each program}}
+
                 {{#with details}}
                 {{#with museum}}
-                <p>{{name}}</p>
-                {{#with location}}
-                <p>{{address}}</p>
-                <p>{{city}}</p>
-                <p>{{country}}</p>
+                <h6>{{name}}</h6>
+                <ul>
+                    <li>{{location.address}}</li>
+                    <li>{{location.city}}</li>
+                    <li>{{location.country}}</li>
+                </ul>
+                {{#each exhibits}}
+                <div>
+                    <p>{{name}}</p>
+                    <p>{{#if artist}}{{artist}}{{/if}}</p>
+                    <p>{{description}}</p>
+                    <p>{{audio_guide}}</p>
+                </div>
+                {{/each}}
+
+
                 {{/with}}
-                {{/with}}
+
+                <div>
+                    <ul>
+                        <li>{{guide.name}}</li>
+                        <li>{{guide.language}}</li>
+                        <li>{{guide.rating}}</li>
+                    </ul>
+
+
+                </div>
                 {{/with}}
             </section>
-        </main>
-        {{/each}}
-        <hr>
-        {{#each exhibits}}
-        <main>
+            {{/each}}
+
             <section>
-                <p>{{name}}</p>
-                <p>{{#if artist}}{{artist}}{{/if}}</p>
-                <p>{{description}}</p>
-                <p>{{audio_guide}}</p>
-            </section>
-        </main>
-        {{/each}}
-        <hr>
-        {{#with guide}}
-        <main>
-            <section>
-                <p>{{name}}</p>
-                <p>{{language}}</p>
-                <p>{{rating}}</p>
-            </section>
-        </main>
-        {{/with}}
-        <hr>
-        {{#each program1}}
-        <main>
-            <section>
-                <p>{{name}}</p>
-                <p>{{type}}</p>
-                <p>{{duration}}</p>
+                <h4>{{program.[0].name}}</h4>
+                <p>{{program.[0].type}}</p>
+                <p>{{program.[0].duration}}</p>
+
+                {{#each program}}
+
                 {{#with details}}
                 {{#with venue}}
-                <p>{{name}}</p>
-                {{#with location}}
-                <p>{{address}}</p>
-                <p>{{city}}</p>
-                <p>{{country}}</p>
+                <h6>{{name}}</h6>
+                <ul>
+                    <li>{{location.address}}</li>
+                    <li>{{location.city}}</li>
+                    <li>{{location.country}}</li>
+                </ul>
                 {{/with}}
-                {{/with}}
-                {{/with}}
-            </section>
-        </main>
-        {{/each}}
-        <hr>
-        {{#each performers}}
-        <main>
-            <section>
-                <p>{{name}}</p>
-                <p>{{type}}</p>
-            </section>
-        </main>
-        {{/each}}
-        <hr>
-        {{#with guide1}}
-        <main>
-            <section>
-                <p>{{name}}</p>
-                <p>{{language}}</p>
-                <p>{{rating}}</p>
-            </section>
-        </main>
-        {{/with}}
 
-        {{/with}}
+                {{#each performers}}
+                <ul>
+                    <li>{{name}}</li>
+                    <li>{{type}}</li>
+                </ul>
+                {{/each}}
+
+                {{/with}}
+
+                {{/each}}
+
+
+                {{!-- {{/each}} --}}
+
+
+                {{/with}}
+            </section>
 
     </section>
-</div>
+</main>
 
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
