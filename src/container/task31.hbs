@@ -196,8 +196,8 @@
     <h5>{{title}}</h5>
 
     <div class="row">
-        {{#each navigation}}
-        <div class="col-4 g-3">
+        <div class="col-3 g-3">
+            {{#each navigation}}
             <table>
                 <tr>
                     <th>
@@ -207,13 +207,10 @@
                     </th>
                 </tr>
             </table>
+            {{/each}}
         </div>
-        {{/each}}
-    </div>
-
-    <div class="row">
-        {{#each socialMedia}}
-        <div class="col-4 g-3">
+        <div class="col-3 g-3">
+            {{#each socialMedia}}
             <table>
                 <tr>
                     <th>
@@ -223,13 +220,10 @@
                     </th>
                 </tr>
             </table>
+            {{/each}}
         </div>
-        {{/each}}
-    </div>
-
-    <div class="row">
-        {{#each partners}}
-        <div class="col-4 g-3">
+        <div class="col-3 g-3">
+            {{#each partners}}
             <table>
                 <tr>
                     <th>
@@ -239,8 +233,8 @@
                     </th>
                 </tr>
             </table>
+            {{/each}}
         </div>
-        {{/each}}
     </div>
     {{/with}}
 </main>
