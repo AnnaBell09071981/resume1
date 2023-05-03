@@ -19,7 +19,6 @@
                 <p>{{location.country}}</p>
                 <p>{{date}}</p>
             </div>
-            {{!-- {{#each program}} --}}
             <section>
                 <h4>{{program.[0].name}}</h4>
                 <p>{{program.[0].type}}</p>
@@ -47,18 +46,20 @@
 
                 {{/with}}
 
-                <div>
-                    <ul>
-                        <li>{{guide.name}}</li>
-                        <li>{{guide.language}}</li>
-                        <li>{{guide.rating}}</li>
-                    </ul>
 
-
-                </div>
                 {{/with}}
             </section>
             {{/each}}
+
+            <section>
+                <div>
+                    <ul>
+                        <li>{{program.[0].details.guide.name}}</li>
+                        <li>{{program.[0].details.guide.language}}</li>
+                        <li>{{program.[0].details.guide.rating}}</li>
+                    </ul>
+                </div>
+            </section>
 
             <section>
                 <h4>{{program.[0].name}}</h4>
@@ -87,14 +88,17 @@
                 {{/with}}
 
                 {{/each}}
-
-
-                {{!-- {{/each}} --}}
-
-
-                {{/with}}
             </section>
-
+            <section>
+                <div>
+                    <ul>
+                        <li>{{program.[1].details.guide.name}}</li>
+                        <li>{{program.[1].details.guide.language}}</li>
+                        <li>{{program.[1].details.guide.rating}}</li>
+                    </ul>
+                </div>
+            </section>
+            {{/with}}
     </section>
 </main>
 
