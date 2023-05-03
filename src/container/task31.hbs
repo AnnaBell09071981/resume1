@@ -9,12 +9,12 @@
         <section class="row">
             {{#each links}}
             <div class="col-3">
-                <button class="btn btn-link"><a href="{{href}}">{{text}}</a></button>
+                <a href="{{href}}" class="btn btn-link">{{text}}</a>
             </div>
             {{/each}}
             {{#with button}}
             <div class="col-3">
-                <button class="btn btn-primary btn-lg"><a href="{{href}}">{{text}}</a></button>
+                <a href="{{href}}" class="btn btn-primary btn-lg">{{text}}</a>
             </div>
             {{/with}}
         </section>
@@ -26,7 +26,7 @@
     <section>
         <h1>{{title}}</h1>
         <p>{{description}}</p>
-        <button class="btn btn-primary btn-lg"><a href="{{button.link}}">{{button.text}}</a></button>
+        <a href="{{button.link}}" class="btn btn-primary btn-lg">{{button.text}}</a>
     </section>
     {{/with}}
     <br>
@@ -42,9 +42,9 @@
             <div class="card">
                 <div class="card-body">
                     <img class="card-img-top" src="{{picture.src}}" alt="{{picture.alt}}">
-                    <h5 class="card-title text-bg-primary">{{title}}</h5>
-                    <p class="text-bg-secondary">{{description}}</p>
-                    <button class="btn btn-primary btn-lg"><a href="{{button.href}}">{{button.text}}</a></button>
+                    <h3 class="card-title">{{title}}</h3>
+                    <p>{{description}}</p>
+                    <a href="{{button.href}}" class="btn btn-primary btn-lg">{{button.text}}</a>
                 </div>
             </div>
         </div>
@@ -95,15 +95,15 @@
         <div class="col-4">
             <div class="card">
                 <div class="card-header">
-                    {{name}}
+                    <h4>{{name}}</h4>
                 </div>
                 {{#each items}}
                 <div class="card-body">
-                    <ul>
-                        <li class="list-group-item">
-                            {{this}}
-                        </li>
-                    </ul>
+                    <table class="table">
+                        <tr>
+                            <th>{{this}}</th>
+                        </tr>
+                    </table>
                 </div>
                 {{/each}}
             </div>
