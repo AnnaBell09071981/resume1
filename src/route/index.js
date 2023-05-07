@@ -1414,6 +1414,7 @@ router.get('/navsBootstrap', function (req, res) {
 
 // ================================================================
 
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -1699,6 +1700,14 @@ router.get('/shophome', function (req, res) {
         },
       ],
     ],
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/CFbootstrap', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('CFbootstrap', {
+    layout: 'bootstrap',
+
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
