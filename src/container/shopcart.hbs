@@ -38,37 +38,40 @@
             <section>
                 <div class="row">
                     {{#each goodsBlock}}
-                    <div class="card mb-5">
-                        <div class="col-12">
-                            <div class="card-body">
-                                <img class="card-img-right" src="{{image}}" alt="{{image}}">
-                                <h6 class="row col-12 text-center">{{name}}</h6>
-                                <p class="row col-12 text-center">{{description}}</p>
-                                {{#with price}}
-                                <div class="">
-                                    <p>{{title}}</p>
-                                    <p>{{value}}</p>
-                                </div>
-                                {{/with}}
-                                <div>
-                                    <p class="">{{amount}}</p>
-                                </div>
-                                <div class="row col-12 text-end">
-                                    {{#each buttons}}
-                                    <div class="mb-2">
-                                        {{#if isPrimary}}
-                                        <button class="btn btn-primary">{{text}}</button>
-                                        {{/if}}
-                                        {{#if isDanger}}
-                                        <button class="btn btn-danger">{{text}}</button>
-                                        {{/if}}
-                                    </div>
-                                    {{/each}}
+                    <div class="card mb-4">
+                        <div class="card-body row p-2">
+                            <div class="col-2">
+                                <img src="{{image}}">
+                            </div>
+                            <div class="col-4 ps-0">
+                                <h3 class="card-title mt-2">{{name}}</h3>
+
+                                <div class="mt-1">
+                                    {{description}}
                                 </div>
 
                             </div>
-                        </div>
 
+                            <div class="col-2">
+                                <div class="col-2">{{price.title}}</div>
+                                <h3 class="mt-1">{{price.value}}</h3>
+                            </div>
+
+                            <div class="col-2">
+                                <div class="mt-5">{{amount}}</div>
+                            </div>
+                            <div class="col-2">
+                                {{#each buttons}}
+                                <div>
+                                    <div class="btn {{#if isPrimary}}
+                                        btn-primary{{/if}} {{#if isDanger}}
+                                        btn-outline-danger {{/if}} mt-2 mb-2">
+                                        {{text}}
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
                     </div>
                     {{/each}}
                 </div>
