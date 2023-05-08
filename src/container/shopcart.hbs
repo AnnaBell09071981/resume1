@@ -36,45 +36,42 @@
                 <hr>
             </div>
             <section>
-                {{#each goodsBlock}}
-                <div class="card mb-5" style="max-width: 740px;">
-                    <div class="row g-0">
-
-                        <div class="col-md-4">
-                            <img class="img-fluid rounded-start" src="{{image}}" alt="{{image}}" width="500px"
-                                height="600px">
-                        </div>
-                        <div class="col-md-8">
+                <div class="row">
+                    {{#each goodsBlock}}
+                    <div class="card mb-5">
+                        <div class="col-12">
                             <div class="card-body">
-                                <div>
-                                    <h4>{{name}}</h4>
+                                <img class="card-img-right" src="{{image}}" alt="{{image}}">
+                                <h6 class="row col-12 text-center">{{name}}</h6>
+                                <p class="row col-12 text-center">{{description}}</p>
+                                {{#with price}}
+                                <div class="">
+                                    <p>{{title}}</p>
+                                    <p>{{value}}</p>
                                 </div>
-
+                                {{/with}}
                                 <div>
-                                    <p>{{description}}</p>
+                                    <p class="">{{amount}}</p>
                                 </div>
-                                <div>
-                                    <p>{{price.title}} {{price.value}}</p>
-                                </div>
-                                <div>
-                                    <p>{{amount}}</p>
-                                </div>
-                                {{#each buttons}}
-                                <div class="text-end">
-                                    {{#if isPrimary}}
-                                    <button class="btn btn-primary">{{text}}</button>
-                                    {{/if}}
-                                    {{#if isDanger}}
-                                    <button class="btn btn-danger">{{text}}</button>
-                                    {{/if}}
+                                <div class="row col-12 text-end">
+                                    {{#each buttons}}
+                                    <div class="mb-2">
+                                        {{#if isPrimary}}
+                                        <button class="btn btn-primary">{{text}}</button>
+                                        {{/if}}
+                                        {{#if isDanger}}
+                                        <button class="btn btn-danger">{{text}}</button>
+                                        {{/if}}
+                                    </div>
                                     {{/each}}
                                 </div>
+
                             </div>
                         </div>
 
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </section>
 
             <div>
