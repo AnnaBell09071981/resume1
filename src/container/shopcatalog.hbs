@@ -1,0 +1,358 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<main class="p-5">
+
+
+
+    <section>
+        <div>
+            {{#with navigation}}
+            <section class="row">
+                {{#each links}}
+                <div class="col-2">
+                    {{#if @last}}
+                    <a href="#" class="btn btn-link disabled">{{text}}</a>
+                    {{else}}
+                    <a href="{{href}}" class="btn btn-link">{{text}}</a>
+                    {{/if}}
+                </div>
+                {{/each}}
+            </section>
+            {{/with}}
+        </div>
+    </section>
+
+    <div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <ol class="breadcrumb">
+                {{#each breadcrumb}}
+                {{#if url}}
+                <li class="breadcrumb-item">
+                    <a href="{{url}}">{{name}}</a>
+                </li>
+                {{else}}
+                <li class="breadcrumb-item">
+                    <a href="#">{{name}}</a>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ol>
+
+
+            <h1 class="mb-3">{{header}}</h1>
+            <div class="row col-12">
+
+                <div class="col-4">
+                    <select class="form-select">
+                        <option selected>{{sortBlock.[0].placeholder}}</option>
+                        <option {{sortBlock.[0].options.[0].value}}="1">{{sortBlock.[0].options.[0].text}}</option>
+                        <option {{sortBlock.[0].options.[1].value}}="2">{{sortBlock.[0].options.[1].text}}</option>
+                    </select>
+                </div>
+                <div class="col-4">
+
+                    <select class="form-select">
+                        <option selected>{{sortBlock.[1].placeholder}}</option>
+                        <option {{sortBlock.[0].options.[0].value}}="1">{{sortBlock.[1].options.[0].text}}</option>
+                        <option {{sortBlock.[0].options.[1].value}}="2">{{sortBlock.[1].options.[1].text}}</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <select class="form-select">
+                        <option selected>{{sortBlock.[2].placeholder}}</option>
+                        <option {{sortBlock.[0].options.[0].value}}="1">{{sortBlock.[2].options.[0].text}}</option>
+                        <option {{sortBlock.[0].options.[1].value}}="2">{{sortBlock.[2].options.[1].text}}</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+
+            <div class="col-12">
+
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card mt-5">
+                            <div class="card-header">
+                                {{#with filterBlock}}
+                                <h5>{{sellers.title}}</h5>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">{{sellers.list.[0].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">{{sellers.list.[1].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+
+                                <div class="col-12">
+                                    <hr>
+                                </div>
+
+
+                                <h5>{{brands.title}}</h5>
+
+                                <div class="mb-3">
+                                    <input class="form-control" placeholder="{{brands.input.placeholder}}">
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">{{brands.options.[0].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">{{brands.options.[1].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">{{brands.options.[2].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+                                <div class="form-check">
+                                    <label class="form-check-label">{{brands.options.[3].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+
+                                <div class="col-12 mt-2 mb-2">
+                                    <hr>
+                                </div>
+
+                                {{#with price}}
+                                <h6>{{title}}</h6>
+                                {{#with range}}
+                                <div class="mb-3 mt-3">
+
+                                    <input class="form-control" placeholder="{{from}}">
+
+                                </div>
+                                <div class="mb-3 mt-3">
+
+                                    <input class="form-control" placeholder="{{to}}">
+
+                                </div>
+                                {{/with}}
+
+                                {{#with button}}
+                                <a href="{{link}}" class="btn btn-light">{{text}}</a>
+                                {{/with}}
+                                {{/with}}
+                                <div class="col-12">
+                                    <hr>
+                                </div>
+                                <div>
+                                    <p>{{filterList.[0].title}}</p>
+                                </div>
+
+                                <div class="form-check">
+                                    <label class="form-check-label">{{filterList.[0].options.[0].value}}</label>
+                                    <input type="checkbox" class="form-check-input">
+                                </div>
+
+                                <div class="col-12">
+                                    <hr>
+                                </div>
+                                <div>
+                                    <p>{{filterList.[1].title}}</p>
+                                </div>
+                                <div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[1].options.[0].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[1].options.[1].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[1].options.[2].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[1].options.[3].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <p>{{filterList.[2].title}}</p>
+                                </div>
+                                <div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[2].options.[0].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[2].options.[1].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[2].options.[2].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[2].options.[3].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[2].options.[4].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <p>{{filterList.[3].title}}</p>
+                                </div>
+                                <div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[3].options.[0].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[3].options.[1].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[3].options.[2].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[3].options.[3].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[3].options.[4].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <hr>
+                                </div>
+
+                                <div>
+                                    <p>{{filterList.[4].title}}</p>
+                                </div>
+                                <div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[4].options.[0].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[4].options.[1].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[4].options.[2].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[4].options.[3].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                    <div class="form-check">
+                                        <label class="form-check-label">{{filterList.[4].options.[4].value}}</label>
+                                        <input type="checkbox" class="form-check-input">
+                                    </div>
+                                </div>
+
+                                {{/with}}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row col-8 mt-5 mb-5">
+
+                        {{#each goodsList}}
+                        <div class="col-4 me-5">
+                            {{> catalogItem}}
+                        </div>
+                        {{/each}}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card text-bg-success mt-5 mb-5">
+            <div class="card-body">
+                <div class="text-center">
+                    {{#with service}}
+                    <div class="card-title">
+                        <h2>{{title}}</h2>
+                    </div>
+                    <div class="text-centr">
+                        <p>
+                            {{description}}
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <a href="{{buttons.[0].link}}" class="btn btn-primary">{{buttons.[0].text}}</a>
+                    </div>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="col-12">
+        <hr>
+    </div>
+
+
+    <footer class="mt-3">
+        <div class="row">
+            {{#each footer}}
+            <section class="col-2">
+                <ul class="nav">
+                    {{#each this}}
+                    <li class="nav-item">
+                        {{#if @last}}
+                        <a class="nav-link disabled" href="#">{{text}}</a>
+                        {{else}}
+                        <a class="nav-link" href="{{link}}">{{text}}</a>
+                        {{/if}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </section>
+            {{/each}}
+        </div>
+
+    </footer>
+    </div>
+</main>
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
