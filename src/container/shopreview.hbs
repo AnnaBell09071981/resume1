@@ -138,131 +138,17 @@
         {{/with}}
 
         <div class="col-12">
-            <div class="card mt-5">
-                <div class="card-body">
+            {{#each reviewList}}
+            <div>
 
-                    <div class="card">
-                        <div class="card-header">
-                            <ul>
-                                <li class="list-group">{{reviewList.[0].title.userName}}</li>
-                                <li class="list-group">{{reviewList.[0].title.caption}}</li>
-                                <li class="list-group">{{reviewList.[0].title.date}}</li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p class="pb-3">{{reviewList.[0].reviewBody.seller.title}}:
-                                {{reviewList.[0].reviewBody.seller.value}}
-                            </p>
-                            <p>{{reviewList.[0].reviewBody.rating.title}} : {{reviewList.[0].reviewBody.rating.value}}
-                            </p>
+                {{> reviewItem }}
 
-                            <p>{{reviewList.[0].reviewBody.text}}</p>
-                            <p>{{reviewList.[0].reviewBody.advantages.title}}</p>
-                            <p>{{reviewList.[0].reviewBody.advantages.text}}</p>
-                            <p>{{reviewList.[0].reviewBody.disadvantages.title}}</p>
-                            <p>{{reviewList.[0].reviewBody.disadvantages.text}}</p>
-                            <div class="row col-12">
-                                <div class="col-3">
-                                    <img class="card-img" src="{{reviewList.[0].reviewBody.images.[0]}}">
-                                </div>
-                                <div class="col-3">
-                                    <img class="card-img" src="{{reviewList.[0].reviewBody.images.[1]}}">
-                                </div>
-                                <div class="col-3">
-                                    <img class="card-img" src="{{reviewList.[0].reviewBody.images.[2]}}">
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card mt-3 ms-5">
-                            <div class="card-body">
-                                <p><b>{{reviewList.[0].reviewBody.coments.[0].userName}}</b></p>
-                                <p>{{reviewList.[0].reviewBody.coments.[0].date}}</p>
-                                <p>{{reviewList.[0].reviewBody.coments.[0].text}}</p>
-                            </div>
-
-                        </div>
-
-                        <div class="card mt-3 ms-5">
-                            <div class="card-body">
-                                <p><b>{{reviewList.[0].reviewBody.coments.[1].userName}}</b></p>
-                                <p>{{reviewList.[0].reviewBody.coments.[1].date}}</p>
-                                <p>{{reviewList.[0].reviewBody.coments.[1].text}}</p>
-                            </div>
-
-                        </div>
-
-
-                        <div class="card mt-3 ms-5">
-                            <div class="card-body">
-                                <p><b>{{reviewList.[0].reviewBody.coments.[2].userName}}</b></p>
-                                <p>{{reviewList.[0].reviewBody.coments.[2].date}}</p>
-                                <p>{{reviewList.[0].reviewBody.coments.[2].text}}</p>
-                            </div>
-
-                        </div>
-
-
-
-
-                    </div>
-
-
-                </div>
             </div>
+            {{/each}}
 
 
 
-
-            <div class="card mt-5">
-                <div class="card-body">
-
-                    <div class="card">
-                        <div class="card-header">
-                            <ul>
-                                <li class="list-group">{{reviewList.[1].title.userName}}</li>
-                                <li class="list-group">{{reviewList.[1].title.caption}}</li>
-                                <li class="list-group">{{reviewList.[1].title.date}}</li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <p class="pb-3">{{reviewList.[1].reviewBody.seller.title}}:
-                                {{reviewList.[1].reviewBody.seller.value}}
-                            </p>
-                            <p>{{reviewList.[1].reviewBody.rating.title}} : {{reviewList.[1].reviewBody.rating.value}}
-                            </p>
-
-                            <p>{{reviewList.[1].reviewBody.text}}</p>
-                            <p>{{reviewList.[1].reviewBody.advantages.title}}</p>
-                            <p>{{reviewList.[1].reviewBody.advantages.text}}</p>
-                            <p>{{reviewList.[1].reviewBody.disadvantages.title}}</p>
-                            <p>{{reviewList.[1].reviewBody.disadvantages.text}}</p>
-                            <div class="row">
-                                <div class="col-2">
-                                    <img class="card-img" src="{{reviewList.[1].reviewBody.images.[0]}}">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card mt-3 ms-5">
-                            <div class="card-body">
-                                <p><b>{{reviewList.[0].reviewBody.coments.[0].userName}}</b></p>
-                                <p>{{reviewList.[0].reviewBody.coments.[0].date}}</p>
-                                <p>{{reviewList.[0].reviewBody.coments.[0].text}}</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-            </div>
-
-            <div class="card text-bg-success">
+            <div class="card text-bg-success mt-5 mb-5">
                 <div class="card-body">
                     <div class="text-center">
                         {{#with service}}
@@ -284,7 +170,7 @@
         </div>
 
     </div>
-    <div class="col-8">
+    <div class="col-12">
         <hr>
     </div>
 
