@@ -2090,7 +2090,7 @@ router.get('/IconeBootstrap', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('IconeBootstrap', {
-    layout: obtstrapast,
+    layout: 'bootstrap',
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
@@ -2347,6 +2347,19 @@ router.get('/shopcart', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-// ============================================master
+// ============================================
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/bootstrapCSS', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrapCSS', {
+    layout: 'bootstrap',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+// ================================================================
 // Підключаємо роутер до бек-енду
 module.exports = router
