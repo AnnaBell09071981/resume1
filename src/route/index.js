@@ -2078,20 +2078,25 @@ router.get('/shoporder', function (req, res) {
           text: 'About',
           link: 'https://www.youtube.com/about/',
         },
+      ],
+    ],
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 //           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/IconeBootstrap', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('IconeBootstrap', {
-    layout: obtstrapast
+    layout: obtstrapast,
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
 // ================================================================
 
-<<<<<
 // ================================================================
 
 // router.get Створює нам один ентпоїнт
