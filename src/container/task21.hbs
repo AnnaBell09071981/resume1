@@ -4,11 +4,11 @@
 --}}
 
 <heading>
-    <main>
-        <div class="card">
+    <main class="ms-5 ps-5">
+        <div class="card mt-5">
             <div class="card-body">
                 {{#with heading.main}}
-                <h1>{{title}}</h1>
+                <h1 class="ms-5">{{title}}</h1>
                 <p>{{text}}</p>
                 {{#with button_text}}
                 <button class="btn btn-primary">{{solid}}</button>
@@ -20,13 +20,11 @@
                 {{/with}}
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="card">
+
+        <div class="card mt-5">
             <div class="card-body">
                 {{#with heading.second}}
-                <h2>{{title}}</h2>
+                <h2 class="ms-5">{{title}}</h2>
                 <p>{{text}}</p>
                 {{#with button_text}}
                 <button class="btn btn-secondary">{{solid}}</button>
@@ -38,13 +36,11 @@
                 {{/with}}
             </div>
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="card">
+
+        <div class="card mt-5">
             <div class="card-body">
                 {{#with heading.subblock}}
-                <h3>{{title}}</h3>
+                <h3 class="ms-5">{{title}}</h3>
                 <p>{{text}}</p>
                 {{#with button_text}}
                 <button class="btn btn-dark">{{solid}}</button>
@@ -56,12 +52,10 @@
                 {{/with}}
             </div>
         </div>
-        <br>
-        <br>
-        <br>
+
         {{#with nested_display}}
-        <div class="display-1">{{title}}</div>
-        <div class="card">
+        <div class="display-1 mt-5">{{title}}</div>
+        <div class="card my-5">
             <div class="card-body">
                 {{#with children_display}}
                 <div class="display-4">{{title}}</div>
@@ -76,13 +70,15 @@
         <br>
         <h6>{{header_text}}</h6>
         <br>
-        <button class="btn btn-info">{{button.text}}</button>
+        <button class="btn btn-info mb-">{{button.text}}</button>
         {{/with}}
-        <br>
-        <br>
-        <hr>
-        <br>
-        <hr>
+
+        <div class="mb-5">
+            <hr>
+        </div>
+        <div class="mb-5">
+            <hr>
+        </div>
         <div>
             {{#with paragraph}}
             <p class="text-uppercase">{{title}}</p>
@@ -93,7 +89,7 @@
             </div>
             {{/with}}
             <br>
-            <div class="card">
+            <div class="card mb-5">
                 <div class="card-body">
                     {{#each list_name}}
                     <ul>
