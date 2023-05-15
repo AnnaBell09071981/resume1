@@ -14,18 +14,20 @@
 </head>
 
 <body>
+  <div>
+    {{> nav}}
+  </div>
 
-  {{> nav}}
-
-  <br>
-  <hr>
+  <div>
+    <hr>
+  </div>
   {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
   {{{body}}}
 
 
-
-  {{> footer}}
-
+  <div>
+    {{> footer}}
+  </div>
 </body>
 
 </html>
